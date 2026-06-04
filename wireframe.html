@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uniThink — Tutorial Wireframe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #1E1E1E;
+      --surface: #252525;
+      --border: rgba(255,255,255,0.07);
+      --navy: #1E3A8A;
+      --gold: #D4A017;
+      --white: #FFFFFF;
+      --muted: #A0A0A0;
+      --gradient: linear-gradient(135deg, #1E3A8A, #D4A017);
+      --step-gap: 2rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      padding: 2.5rem 1.5rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212,160,23,0.35);
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .page-header h1 span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-header p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* ── STEP CARD ── */
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: var(--step-gap);
+      position: relative;
+    }
+    .step-number {
+      position: absolute;
+      top: -14px;
+      left: 1.75rem;
+      background: var(--gradient);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.85rem;
+      border-radius: 100px;
+    }
+    .step h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .step .desc {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── CODE BLOCK ── */
+    .code-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .code-block {
+      background: #111;
+      border: 1px solid rgba(212,160,23,0.15);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: #e2e2e2;
+      white-space: pre;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .code-block .comment { color: #666; }
+    .code-block .key { color: #D4A017; }
+    .code-block .val { color: #7DD3B0; }
+    .code-block .cmd { color: #93C5FD; }
+
+    /* copy button */
+    .copy-btn {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.75rem;
+      background: rgba(212,160,23,0.12);
+      border: 1px solid rgba(212,160,23,0.25);
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.7rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .copy-btn:hover { background: rgba(212,160,23,0.22); }
+
+    /* ── WHAT IS BOX ── */
+    .info-box {
+      background: rgba(30, 58, 138, 0.12);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 8px 8px 0;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #d0d8f0;
+    }
+    .info-box strong { color: var(--white); }
+
+    /* ── BRAND GRID ── */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .brand-card {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+    .brand-card h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    /* color swatches */
+    .swatches { display: flex; flex-direction: column; gap: 0.5rem; }
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.8rem;
+    }
+    .swatch-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+    .swatch-dot.gradient { background: linear-gradient(135deg, #1E3A8A, #D4A017); }
+    .swatch-name { color: var(--white); font-weight: 600; }
+    .swatch-hex { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; }
+
+    /* logo preview */
+    .logo-preview {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      grid-column: span 2;
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+    .logo-preview svg { width: 54px; height: 54px; flex-shrink: 0; }
+    .logo-preview .logo-info { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+    .logo-preview .logo-info strong { color: var(--white); font-size: 0.95rem; font-family: 'Poppins', sans-serif; display: block; margin-bottom: 0.2rem; }
+
+    /* ── INSPIRATION GRID ── */
+    .inspo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+    .inspo-card {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+    }
+    .inspo-card .tag {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .inspo-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .inspo-card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .inspo-note {
+      margin-top: 1rem;
+      background: rgba(212,160,23,0.06);
+      border: 1px dashed rgba(212,160,23,0.25);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .inspo-note strong { color: var(--gold); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.25rem 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 580px) {
+      .brand-grid { grid-template-columns: 1fr; }
+      .logo-preview { grid-column: span 1; }
+      .inspo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="badge">YouTube Tutorial — Reference Wireframe</div>
+    <h1>Building a Website with <span>Claude Code</span></h1>
+  </header>
+
+
+  <!-- ────────────────────────────────────────────
+       STEP 1 — CLAUDE.md
+  ──────────────────────────────────────────── -->
+  <section class="step">
+    <div class="step-number">Step 1</div>
+    <h2>CLAUDE.md — Your Project Instructions File</h2>
+    <p class="desc">
+      The first thing Claude Code reads when it opens your project. It sets the rules, context, and behavior for the entire session.
+    </p>
+
+    <div class="info-box">
+      <strong>What is CLAUDE.md?</strong><br/>
+      A markdown file at the root of your project. Claude reads it automatically every session — brand details, rules, and project context all in one place.
+    </div>
+  </section>
+
+
+  <!-- ────────────────────────────────────────────
+       STEP 2 — INVOKING THE SKILL
+  ──────────────────────────────────────────── -->
+  <section class="step">
+    <div class="step-number">Step 2</div>
+    <h2>Invoking the Frontend-Design Skill</h2>
+    <p class="desc">
+      Skills are pre-built workflows that live inside Claude Code. They give Claude a specialized set of instructions for a specific type of task — like designing production-grade UIs.
+    </p>
+
+    <div class="info-box">
+      <strong>What is a Skill?</strong><br/>
+      A markdown file at <code style="color:#D4A017">~/.claude/skills/skill-name/skill.md</code>. The <strong>frontend-design</strong> skill gives Claude a strict design philosophy — no generic output, production-ready code only.
+    </div>
+
+    <div class="code-label">Skill location on your machine</div>
+    <div class="code-block" id="skill-path"><button class="copy-btn" onclick="copyCode('skill-path', this)">Copy</button><span class="cmd">C:\Users\ADMIN\.claude\skills\frontend-design\skill.md</span></div>
+
+    <div class="code-label">Invoke the skill — type this in Claude Code chat</div>
+    <div class="code-block" id="skill-invoke"><button class="copy-btn" onclick="copyCode('skill-invoke', this)">Copy</button><span class="cmd">/frontend-design</span></div>
+  </section>
+
+
+  <!-- ────────────────────────────────────────────
+       STEP 3 — INSPIRATION
+  ──────────────────────────────────────────── -->
+  <section class="step">
+    <div class="step-number">Step 3</div>
+    <h2>Borrow Design Elements, Not Entire Sites</h2>
+    <p class="desc">
+      You're not copying these websites — you're picking one specific thing you like from each. A button style, a glow effect, a card layout. Spot it, describe it to Claude, and it will recreate that element in the uniThink brand.
+    </p>
+
+    <div class="info-box">
+      <strong>How this works:</strong><br/>
+      Browse any of the sites below, find one design detail that catches your eye — a hover effect, a gradient text heading, a glassmorphism card — then tell Claude: <em>"I want something like [that specific thing] from [site]."</em> Claude adapts it to your colors, fonts, and style. You get the look, not a copy.
+    </div>
+
+    <div class="inspo-grid">
+
+      <div class="inspo-card">
+        <div class="tag">Hero Sections</div>
+        <h4>Framer.com</h4>
+        <p>Bold gradient text headings, clean spacing, minimal CTAs. Good source for hero layout and typography ideas.</p>
+      </div>
+
+      <div class="inspo-card">
+        <div class="tag">Agency Sites</div>
+        <h4>Linear.app</h4>
+        <p>Sharp dark layouts with gradient accents. Borrow their card borders or section spacing — not the whole page.</p>
+      </div>
+
+      <div class="inspo-card">
+        <div class="tag">Animation Ideas</div>
+        <h4>Vercel.com</h4>
+        <p>Glowing background effects, gradient text, smooth hover transitions. Great for one specific micro-interaction at a time.</p>
+      </div>
+
+      <div class="inspo-card">
+        <div class="tag">Design Gallery</div>
+        <h4>Awwwards.com</h4>
+        <p>Filter by "Dark" or "Agency" theme. Use it to spot one layout pattern or visual detail worth adapting.</p>
+      </div>
+
+    </div>
+
+    <div class="inspo-note">
+      <strong>The right mindset:</strong> You're window shopping, not wholesale copying. Find one thing — a button, a glow, a font pairing — describe it clearly to Claude, and let it rebuild that element in uniThink's style.
+    </div>
+  </section>
+
+
+  <!-- ────────────────────────────────────────────
+       STEP 4 — DIRECTED PROMPTING
+  ──────────────────────────────────────────── -->
+  <section class="step">
+    <div class="step-number">Step 4</div>
+    <h2>Individual Components</h2>
+    <p class="desc">
+      Build your website component by component. Each prompt to Claude targets one specific part of the page — a navbar, a hero, a features section. This keeps the output focused and the result easy to review and adjust.
+    </p>
+
+    <div class="info-box">
+      <strong>What is a component?</strong><br/>
+      A component is a self-contained block of your webpage — the navbar, the hero banner, a testimonials row, the footer. By asking Claude to build one at a time, you stay in full control of the layout and can refine each piece before moving on.
+    </div>
+
+    <div class="code-label">Common website components</div>
+    <div class="code-block" id="prompt-seq"><button class="copy-btn" onclick="copyCode('prompt-seq', this)">Copy</button><span class="key">Navbar</span>       <span class="comment">— Logo on left, nav links on right, sticky on scroll</span>
+<span class="key">Hero</span>         <span class="comment">— Bold headline, subtext, CTA button, background glow</span>
+<span class="key">Features</span>     <span class="comment">— 3-column grid, icon + heading + one-line description</span>
+<span class="key">Testimonials</span> <span class="comment">— Cards with quote, name, and role</span>
+<span class="key">Pricing</span>      <span class="comment">— 2–3 tier cards, highlight the recommended plan</span>
+<span class="key">Footer</span>       <span class="comment">— Links, socials, copyright line</span></div>
+
+    <div class="code-label">How to prompt Claude for each component</div>
+    <div class="code-block" id="prompt-example"><button class="copy-btn" onclick="copyCode('prompt-example', this)">Copy</button><span class="val">"Add a navbar. Logo text 'uniThink' on the left using the brand gradient. Nav links on the right: Home, About, Pricing, Contact. Sticky on scroll, dark background."</span>
+
+<span class="val">"Now add a hero section below the navbar. Headline: 'Think Bigger.' Muted subtext underneath. A gradient CTA button. Subtle glow effect behind the headline."</span></div>
+
+    <div class="inspo-note">
+      <strong>The approach:</strong> One component per prompt. Open the result in the browser after each one, decide what needs to change or what comes next, then give Claude the next instruction. Small steps, full control.
+    </div>
+  </section>
+
+
+  <script>
+    function copyCode(id, btn) {
+      const block = document.getElementById(id);
+      // get text without the button text
+      const text = block.innerText.replace(/^Copy\n/, '').trim();
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1800);
+      });
+    }
+  </script>
+
+</body>
+</html>

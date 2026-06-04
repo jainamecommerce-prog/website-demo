@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="1024" height="1024">
+  <defs>
+
+    <!-- Gold on TOP, Navy on BOTTOM — vertical with slight diagonal lean -->
+    <linearGradient id="g" x1="65%" y1="0%" x2="35%" y2="100%">
+      <stop offset="0%"   stop-color="#D4A017"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+
+    <filter id="sf" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="14"
+                    flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+
+  </defs>
+
+  <!-- White circle -->
+  <circle cx="250" cy="250" r="236" fill="#FFFFFF" filter="url(#sf)"/>
+
+  <!-- Shield shape:
+       • TOP corners: very large rounded radius (~62px) — matches the squircle top
+       • SIDES: straight
+       • BOTTOM: curves inward to a soft rounded point — classic shield taper
+  -->
+  <path d="
+    M 180,118
+    Q 118,118 118,180
+    L 118,292
+    Q 118,402 250,432
+    Q 382,402 382,292
+    L 382,180
+    Q 382,118 320,118
+    Z
+  " fill="url(#g)"/>
+
+  <!-- Arrow: ↗ thick rounded-stroke style (external-link / redirect arrow)
+       Diagonal shaft from lower-left meets L-bracket at upper-right corner.
+  -->
+  <line x1="168" y1="352"
+        x2="310" y2="208"
+        stroke="#FFFFFF" stroke-width="52" stroke-linecap="round"/>
+
+  <polyline points="218,208 310,208 310,322"
+            stroke="#FFFFFF" stroke-width="52"
+            stroke-linecap="round" stroke-linejoin="round"
+            fill="none"/>
+
+</svg>

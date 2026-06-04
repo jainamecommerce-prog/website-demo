@@ -1,0 +1,16 @@
+{
+  "brand": "uniThink",
+  "colors": {
+    "background": "#1E1E1E",
+    "primary_start": "#1E3A8A",
+    "primary_end": "#D4A017",
+    "text_primary": "#FFFFFF",
+    "text_muted": "#A0A0A0"
+  },
+  "gradient": "linear-gradient(135deg, #1E3A8A, #D4A017)",
+  "fonts": {
+    "heading": "Poppins",
+    "body": "Inter"
+  },
+  "tagline": "Think Once. Automate Everything."
+}
