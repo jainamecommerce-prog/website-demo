@@ -58,6 +58,12 @@
       width: 36px;
       height: 36px;
       flex-shrink: 0;
+      transition: filter 0.3s, transform 0.2s;
+    }
+
+    .nav-brand:hover svg {
+      filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.85)) drop-shadow(0 0 18px rgba(212, 160, 23, 0.45));
+      transform: scale(1.08);
     }
 
     .nav-brand span {
