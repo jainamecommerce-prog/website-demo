@@ -90,10 +90,18 @@
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      transition: color 0.2s;
+      transition: color 0.3s, text-shadow 0.3s, transform 0.2s;
+      position: relative;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover {
+      color: var(--gold);
+      text-shadow:
+        0 0 6px rgba(212, 160, 23, 0.9),
+        0 0 14px rgba(212, 160, 23, 0.6),
+        0 0 30px rgba(212, 160, 23, 0.35);
+      transform: translateY(-1px);
+    }
 
     /* ── HERO ── */
     .hero {
